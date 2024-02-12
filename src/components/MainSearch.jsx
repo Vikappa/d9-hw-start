@@ -1,17 +1,26 @@
 import { useState } from "react";
-import { Container, Row, Col, Form } from "react-bootstrap";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import Job from "./Job";
 import { useSelector } from "react-redux"
+import { Link } from "react-router-dom";
+import { useDispatch } from 'react-redux'
+
 const MainSearch = () => {
   const [query, setQuery] = useState("");
   const [jobs, setJobs] = useState([])
   const favJobsArray = useSelector(state => state.favList.content)
+  const dispatch = useDispatch()
 
   const baseEndpoint = "https://strive-benchmark.herokuapp.com/api/jobs?search=";
 
   const handleChange = e => {
     setQuery(e.target.value);
   };
+
+const handleDeleteFav = function(id){
+  console.log(id)
+  dispatch({type: 'REMOVE_FROM_FAVLIST', payload: id})
+}
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -49,14 +58,19 @@ const MainSearch = () => {
           <h2>Favourites:</h2>
           {favJobsArray.map((job, index) => {
             return (
-              <div key={index}>
+
+              <div key={index} className="d-flex border border-2 border-primary rounded-3 p-2 my-2">
+                <div>
+
                 <a href={job.url} target="_blank" rel="noreferrer">
                   {job.title}
                 </a>
                 <br />
-                <a href={job.company_url} target="_blank" rel="noreferrer">
-                  {job.company_name}
-                </a>
+                <Link to={`/${job.company_name}`}>
+                <p target="_blank" rel="noreferrer">{job.company_name}</p>
+                </Link>
+                </div>
+                <Button variant="danger" className='p-0 m-2 ms-auto' onClick={() => {handleDeleteFav(job._id)}}>Delete</Button>
               </div>
             )
           })}

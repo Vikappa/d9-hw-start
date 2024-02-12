@@ -1,7 +1,6 @@
 import { Row, Col, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import mainReducer from '../redux/reducers/mainReducer';
 
 const Job = ({ data }) => {
   const favJobs = useSelector(state => state.favList);

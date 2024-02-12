@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import store from './redux/store/storeFavList';
 
 function App() {
-  return (
+  return ( 
     <Provider store={store}>
 
     <BrowserRouter>

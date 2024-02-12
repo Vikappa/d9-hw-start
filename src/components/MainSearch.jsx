@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import Job from "./Job";
-
+import { useSelector } from "react-redux"
 const MainSearch = () => {
   const [query, setQuery] = useState("");
-  const [jobs, setJobs] = useState([]);
+  const [jobs, setJobs] = useState([])
+  const favJobsArray = useSelector(state => state.favList.content)
 
   const baseEndpoint = "https://strive-benchmark.herokuapp.com/api/jobs?search=";
 
@@ -43,6 +44,22 @@ const MainSearch = () => {
           {jobs.map(jobData => (
             <Job key={jobData._id} data={jobData} />
           ))}
+        </Col>
+        <Col xs={10} className="mx-auto my-3">
+          <h2>Favourites:</h2>
+          {favJobsArray.map((job, index) => {
+            return (
+              <div key={index}>
+                <a href={job.url} target="_blank" rel="noreferrer">
+                  {job.title}
+                </a>
+                <br />
+                <a href={job.company_url} target="_blank" rel="noreferrer">
+                  {job.company_name}
+                </a>
+              </div>
+            )
+          })}
         </Col>
       </Row>
     </Container>

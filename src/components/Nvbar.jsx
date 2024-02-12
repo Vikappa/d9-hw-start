@@ -2,13 +2,13 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 
-function Nvbar() {
+function ContainerOutsideExample() {
   return (
-    <Container className=''>
-      <Navbar bg="dark" data-bs-theme="dark">
+    <Container>
+      <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
           <Link to="/" className="navbar-brand">
-          <p>Home</p>
+          <p href="#">Home</p>
           </Link>
         </Container>
       </Navbar>
@@ -16,4 +16,4 @@ function Nvbar() {
   );
 }
 
-export default Nvbar;
+export default ContainerOutsideExample;

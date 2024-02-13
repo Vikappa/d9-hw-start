@@ -20,7 +20,6 @@ const MainSearch = () => {
   };
 
   const handleDeleteFav = function (id) {
-    console.log(id)
     dispatch({ type: 'REMOVE_FROM_FAVLIST', payload: id })
   }
 

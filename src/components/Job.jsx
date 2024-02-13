@@ -18,8 +18,6 @@ const Job = ({ data }) => {
 
   const addCompanyToFav = () => {
     dispatch({type: 'ADD_TO_FAVLIST', payload: data})
-    console.log(data)
-    console.log(favCompany)
   }
 
   return (

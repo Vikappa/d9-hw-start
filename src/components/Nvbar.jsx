@@ -10,6 +10,15 @@ function ContainerOutsideExample() {
           <Link to="/" className="navbar-brand">
           <p href="#">Home</p>
           </Link>
+          <p
+          style={{ cursor: 'pointer'}}
+          className='me-auto navbar-brand'
+          onClick={(e) => {
+            e.preventDefault()
+            console.log("click")
+
+          }}
+          >Wipe</p>
         </Container>
       </Navbar>
     </Container>

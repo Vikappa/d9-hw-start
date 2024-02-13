@@ -10,7 +10,7 @@ const MainSearch = () => {
   const [query, setQuery] = useState("");
   let jobs = useSelector(state => state.searchResults.searchResults)
   const favJobsArray = useSelector(state =>state.favList.content);
-  const searchResultArray = useSelector(state => state.searchResults.searchResults)
+  const searchResultArray = useSelector(state => state.searchResults.content)
   const dispatch = useDispatch()
 
 
@@ -64,14 +64,6 @@ const MainSearch = () => {
                 </div>
                 <Button variant="danger" className='p-0 m-2 ms-auto' onClick={() => { handleDeleteFav(job._id) }}>Delete</Button>
               </div>
-            )
-          }):""}
-        </Col>
-        <Col xs={10} className={searchResultArray.length === 0 ? "d-none" : "mx-auto my-3"}>
-          <h2>Previous reserces:</h2>
-          {searchResultArray?searchResultArray.map((research, index) => {
-            return (
-              <div key={index}></div>
             )
           }):""}
         </Col>

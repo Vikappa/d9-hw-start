@@ -9,7 +9,7 @@ import { getSearchResultsAction } from '../redux/action'
 const MainSearch = () => {
   const [query, setQuery] = useState("");
   let jobs = useSelector(state => state.searchResults.searchResults)
-  const favJobsArray = useSelector(state => state.favList.content)
+  const favJobsArray = useSelector(state =>state.favList.content);
   const searchResultArray = useSelector(state => state.searchResults.content)
   const dispatch = useDispatch()
 
@@ -41,13 +41,15 @@ const MainSearch = () => {
           </Form>
         </Col>
         <Col xs={10} className="mx-auto mb-5">
-          {jobs.map(jobData => (
-            <Job key={jobData._id} data={jobData} />
-          ))}
+          {jobs.length>0?
+          jobs.map((jobData, index ) => (
+            <Job key={index} data={jobData} />
+          ))
+        :""}
         </Col>
         <Col xs={10} className={favJobsArray.length === 0 ? "d-none" : "mx-auto my-3"}>
           <h2>Favourite companies:</h2>
-          {favJobsArray.map((job, index) => {
+          {favJobsArray?favJobsArray.map((job, index) => {
             return (
 
               <div key={index} className="d-flex border border-2 border-primary rounded-3 p-2 my-2">
@@ -64,7 +66,7 @@ const MainSearch = () => {
                 <Button variant="danger" className='p-0 m-2 ms-auto' onClick={() => { handleDeleteFav(job._id) }}>Delete</Button>
               </div>
             )
-          })}
+          }):""}
         </Col>
       </Row>
     </Container>

@@ -33,7 +33,9 @@ export const addToFavlist = (payload) => {
               const response = await fetch(baseEndpoint + query + "&limit=20");
               if (response.ok) {
                   const { data } = await response.json();
-        dispatch(saveSearchResult(data));
+                  if(data.length > 0){
+                  dispatch(saveSearchResult(data));
+                  }
       } else {
         alert("Error fetching results");
       }

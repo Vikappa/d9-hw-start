@@ -1,3 +1,5 @@
+import { ADD_TO_FAVLIST } from '../action';
+
 const initialState = {
 
       content: [],
@@ -7,14 +9,14 @@ const initialState = {
   const favCompanyReducer = (state = initialState, action) => {
     switch (action.type) {
 
-      case 'ADD_TO_FAVLIST':
+      case ADD_TO_FAVLIST:
         console.log(state)
         let newFavList = [...state.content]
         const alreadyExists = newFavList.find(item => item.company_name === action.payload.company_name)
                 if (!alreadyExists) {
             newFavList.push(action.payload)
         }
-      return {favList: {content: newFavList}}
+      return {content: newFavList}
       case 'REMOVE_FROM_FAVLIST':
         let newFavList2 = [...state.favList.content]
         for (let index = 0; index < newFavList2.length; index++) {

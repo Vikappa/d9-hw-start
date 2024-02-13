@@ -8,10 +8,11 @@ import { getSearchResultsAction } from '../redux/action'
 
 const MainSearch = () => {
   const [query, setQuery] = useState("");
-  const [jobs, setJobs] = useState([])
+  let jobs = useSelector(state => state.searchResults.searchResults)
   const favJobsArray = useSelector(state => state.favList.content)
   const searchResultArray = useSelector(state => state.searchResults.content)
   const dispatch = useDispatch()
+
 
 
   const handleChange = e => {

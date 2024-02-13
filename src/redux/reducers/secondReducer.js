@@ -1,7 +1,7 @@
 import {SAVE_SEARCH_RESULT} from '../action';   
 
 const initialState = {
-    content: [],
+    searchResults: [],
   };
   
   const searchResultsReducer = (state = initialState, action) => {

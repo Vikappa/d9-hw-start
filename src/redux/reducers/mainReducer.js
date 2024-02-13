@@ -9,7 +9,7 @@ const initialState = {
 
       case 'ADD_TO_FAVLIST':
         let newFavList = [...state.favList.content]
-        const alreadyExists = newFavList.find(item => item._id === action.payload._id)
+        const alreadyExists = newFavList.find(item => item.company_name === action.payload.company_name)
                 if (!alreadyExists) {
             newFavList.push(action.payload)
         }

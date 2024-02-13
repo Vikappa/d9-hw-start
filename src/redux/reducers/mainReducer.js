@@ -1,10 +1,10 @@
 const initialState = {
-    favList: {
+
       content: [],
-    },
+
   };
   
-  const mainReducer = (state = initialState, action) => {
+  const favCompanyReducer = (state = initialState, action) => {
     switch (action.type) {
 
       case 'ADD_TO_FAVLIST':
@@ -27,4 +27,4 @@ const initialState = {
     }
   }
 
-  export default mainReducer
+  export default favCompanyReducer

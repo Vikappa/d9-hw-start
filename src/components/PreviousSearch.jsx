@@ -17,9 +17,9 @@ function PreviousSearch(props) {
       </Button>
 {props.data.array.map(
     (jobData, index) => (
-        <Collapse id={index} in={open}>
+        <Collapse key={index} in={open}>
         <div id="example-collapse-text">
-          <Job key={index} data={jobData} />
+          <Job key={index+"job"} data={jobData} />
         </div>
       </Collapse>
     )

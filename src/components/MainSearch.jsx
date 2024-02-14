@@ -48,7 +48,7 @@ const MainSearch = () => {
         :""}
         </Col>
         <Col xs={10} className={favJobsArray.length === 0 ? "d-none" : "mx-auto my-3"}>
-          <h2>Favourite companies:</h2>
+          <h2>Favourite jobs:</h2>
           {favJobsArray?favJobsArray.map((job, index) => {
             return (
 

@@ -3,6 +3,7 @@ export const REMOVE_FROM_FAVLIST = "REMOVE_FROM_FAVLIST"
 export const SAVE_SEARCH_RESULT = "SAVE_SEARCH_RESULT"
 export const TURN_OFF_SPINNER = "TURN_OFF_SPINNER"
 export const SEARCH = 'SEARCH'
+export const SWIPE_SEARCH_RESULTS = 'SWIPE_SEARCH_RESULTS'
 const baseEndpoint = "https://strive-benchmark.herokuapp.com/api/jobs?search=";
 
 
@@ -26,6 +27,12 @@ export const addToFavlist = (payload) => {
       payload: payload
     };
   };
+
+  export const swipe = () => { 
+    return {
+      type: SWIPE_SEARCH_RESULTS
+    }
+   }
 
   export const getSearchResultsAction = (query) => {
       return async (dispatch, getState) => {  

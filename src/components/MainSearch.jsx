@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import Job from "./Job";
+import PreviousSearch from "./PreviousSearch";
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux'
@@ -8,9 +9,9 @@ import { getSearchResultsAction } from '../redux/action'
 
 const MainSearch = () => {
   const [query, setQuery] = useState("");
-  let jobs = useSelector(state => state.searchResults.searchResults)
+  let jobs = useSelector(state => state.searchResults.lastSearch)
   const favJobsArray = useSelector(state =>state.favList.content);
-  const searchResultArray = useSelector(state => state.searchResults.content)
+  const searchResultArray = useSelector(state => state.searchResults.searchResults)
   const dispatch = useDispatch()
 
 
@@ -67,6 +68,19 @@ const MainSearch = () => {
             )
           }):""}
         </Col>
+
+        <Col xs={10} className={searchResultArray.length === 0 ? "d-none" : "mx-auto my-3"}>
+
+          <h2>Previous searches:</h2>
+          <div className="d-flex flex-column">
+          {searchResultArray?searchResultArray.map((array, index) => {
+            return (
+              <PreviousSearch key={index} data={{array, index}} />
+              )
+            }):""}
+          </div>
+        </Col>
+
       </Row>
     </Container>
   );

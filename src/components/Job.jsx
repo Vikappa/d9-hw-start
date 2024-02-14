@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux'
 
 const Job = ({ data }) => {
   const favCompany = useSelector(state => state.favList);
-console.log(data)
   const dispatch = useDispatch()
 
   const checkIfFavourite = () => {

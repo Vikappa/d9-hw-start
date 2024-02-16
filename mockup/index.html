@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="assets/style.css" />
+    <title>Home</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <!--SIDEBAR-->
+        <aside class="col col-2">
+          <nav
+            class="navbar navbar-expand-md fixed-left justify-content-between"
+            id="sidebar"
+          >
+            <div class="container flex-column align-items-start">
+              <a class="navbar-brand" href="index.html">
+                <img
+                  src="assets/logo/logo.png"
+                  alt="Spotify Logo"
+                  width="131"
+                  height="40"
+                />
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <ul>
+                    <li>
+                      <a
+                        class="nav-item nav-link d-flex align-items-center"
+                        href="#"
+                        ><i class="bi bi-house-door-fill"></i>&nbsp; Home
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="nav-item nav-link d-flex align-items-center"
+                        href="#"
+                        ><i class="bi bi-book-fill"></i>&nbsp; Your Library</a
+                      >
+                    </li>
+                    <li>
+                      <div class="input-group mt-3">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Search"
+                          aria-label="Search"
+                        />
+                        <div class="input-group-append">
+                          <button
+                            class="btn btn-outline-secondary btn-sm h-100"
+                          >
+                            GO
+                          </button>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="nav-btn">
+              <button class="btn signup-btn" type="button">Sign Up</button>
+              <button class="btn login-btn" type="button">Login</button>
+              <a href="#">Cookie Policy</a> |
+              <a href="#"> Privacy</a>
+            </div>
+          </nav>
+        </aside>
+        <!--END SIDEBAR-->
+        <!--MAIN SECTION-->
+        <main class="col-12 col-md-9 offset-md-3 mainPage">
+          <div class="row">
+            <div class="col-9 col-lg-11 mainLinks d-none d-md-flex">
+              <a href="#">TRENDING</a>
+              <a href="#">PODCAST</a>
+              <a href="#">MOODS AND GENRES</a>
+              <a href="#">NEW RELEASES</a>
+              <a href="#">DISCOVER</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-10">
+              <div id="rock">
+                <h2>Rock Classics</h2>
+                <div
+                  class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
+                  id="rockSection"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-10">
+              <div id="pop">
+                <h2>Pop Culture</h2>
+                <div
+                  class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
+                  id="popSection"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-10">
+              <div id="hiphop">
+                <h2>#HipHop</h2>
+                <div
+                  class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
+                  id="hipHopSection"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <!--END MAIN SECTION-->
+    <!--PLAYER-->
+    <div class="container-fluid fixed-bottom bg-container pt-1">
+      <div class="row h-100">
+        <div class="col-lg-10 offset-lg-2">
+          <div
+            class="row h-100 flex-column justify-content-center align-items-center"
+          >
+            <div class="col-6 col-md-4 playerControls">
+              <div class="d-flex">
+                <a href="#">
+                  <img src="assets/playerbuttons/shuffle.png" alt="shuffle" />
+                </a>
+                <a href="#">
+                  <img src="assets/playerbuttons/prev.png" alt="prev" />
+                </a>
+                <a href="#">
+                  <img src="assets/playerbuttons/play.png" alt="play" />
+                </a>
+                <a href="#">
+                  <img src="assets/playerbuttons/next.png" alt="next" />
+                </a>
+                <a href="#">
+                  <img src="assets/playerbuttons/repeat.png" alt="repeat" />
+                </a>
+              </div>
+              <div class="progress mt-3">
+                <div role="progressbar"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--END PLAYER-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

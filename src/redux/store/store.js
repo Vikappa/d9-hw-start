@@ -1,10 +1,12 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import favCompanyReducer from '../reducers/mainReducer';
-import searchResultsReducer from "../reducers/secondReducer";
+import trendingReducer from "../reducers/trendingReducer";
+import postcastReducer from "../reducers/podcastReducer";
 
 const mainReducer = combineReducers({
-    favList: favCompanyReducer, 
-    searchResults: searchResultsReducer
+    currentTracklist: favCompanyReducer, 
+    trendingAlbum: trendingReducer,
+    podcastAlbum: postcastReducer
 })
 
 const store = configureStore({

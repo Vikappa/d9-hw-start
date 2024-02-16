@@ -10,14 +10,12 @@ function App() {
   return ( 
     <Provider store={store}>
     <BrowserRouter>
-<div className="Container">
-<div className="Row">
+<div className="d-flex h-100">
 <SideBar />
 <Routes>
 <Route path="/" element={<MainScreen/>} />
 <Route path="/podcast" element={<MainScreen/>} />
 </Routes>
-</div>
 </div>
 
 

@@ -28,7 +28,6 @@ return (
 <img src={props.album.album.cover} alt="cover"></img>
 <p
 onClick={()=>{
-    console.log(currentState)
 }}
 >{props.album.album.title}</p>
 </div>

@@ -16,7 +16,6 @@ const currentState = useSelector((state) => state);
     }, []);
 
     useEffect(() => {
-        console.log(currentState)
     }, [currentState]);
 
     return (
@@ -24,12 +23,12 @@ const currentState = useSelector((state) => state);
 <div className="d-flex flex-column">
 
 
-<div className="d-flex pseudoNavbar">
-<p>TRENDING</p>
-<p>PODCAST</p>
-<p>MOODS AND GENRES</p>
-<p>NEW RELEASES</p>
-<p>DISCOVER</p>
+<div className="d-flex pseudoNavbar justify-content-evenly ">
+<p className="titolipseudosidebar">TRENDING</p>
+<p className="titolipseudosidebar">PODCAST</p>
+<p className="titolipseudosidebar">MOODS AND GENRES</p>
+<p className="titolipseudosidebar">NEW RELEASES</p>
+<p className="titolipseudosidebar">DISCOVER</p>
 </div>
 
 <div className="vetrinaAlbum d-flex flex-row flex-wrap justify-content-evenly">

@@ -1,5 +1,5 @@
-export const ADD_TO_FAVLIST = "ADD_TO_FAVLIST"
-export const REMOVE_FROM_FAVLIST = "REMOVE_FROM_FAVLIST"
+export const ADD_TO_TRACKLIST = "ADD_TO_TRACKLIST"
+export const REMOVE_FROM_TRACKLIST = "REMOVE_FROM_TRACKLIST"
 export const SAVE_TRENDING_ALBUM = "SAVE_TRENDING_ALBUM"
 export const TURN_OFF_SPINNER = "TURN_OFF_SPINNER"
 export const SEARCH = 'SEARCH'
@@ -9,16 +9,16 @@ export const SWIPE_PODCAST_ALBUM = 'SWIPE_PODCAST_ALBUM'
 const baseEndpointSearch = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 
 
-export const addToFavlist = (payload) => {
+export const addToTrackList = (payload) => {
     return {
-      type: ADD_TO_FAVLIST,
+      type: ADD_TO_TRACKLIST,
       payload: payload
     };
   };
   
   export const removeFromFavList = (payload) => {
     return {
-      type: REMOVE_FROM_FAVLIST,
+      type: REMOVE_FROM_TRACKLIST,
       payload: payload
     };
   };
@@ -42,6 +42,31 @@ export const addToFavlist = (payload) => {
       type: SWIPE_TRENDING_ALBUM
     }
    }
+
+   export const fetchTracklist = (query) => {
+    return async (dispatch) => {  
+      try {
+        console.log(query)
+        const response = await fetch(query)
+        if (response.ok) {
+          
+                  const { data } = await response.json();
+                  if(data.length > 0){
+                  // dispatch(addToTrackList(data))
+                  }
+      } else {
+        alert("Error fetching results")
+      }
+    } catch (error) {
+      console.log(error);
+      } finally {
+        dispatch({
+          type: TURN_OFF_SPINNER,
+        })
+      }
+    }
+  }
+
 
   export const fetchTrendingAlbum = (query) => {
     return async (dispatch) => {  

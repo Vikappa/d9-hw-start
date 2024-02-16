@@ -10,12 +10,10 @@ function App() {
   return ( 
     <Provider store={store}>
     <BrowserRouter>
-<div className="d-flex h-100">
-<SideBar />
-<MainScreen/>
-</div>
-
-
+    <div className="d-flex h-100">
+    <SideBar />
+    <MainScreen/>
+    </div>
     </BrowserRouter>
     </Provider>
   );

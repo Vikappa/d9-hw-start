@@ -1,19 +1,39 @@
 import { useEffect } from "react";
-
+import { useSelector } from "react-redux";
+import { Link } from 'react-router-dom'
 function AlbumPreview (props) {
 
-    
-useEffect(() => {  
+    const currentState = useSelector((state) => state);
 
-}, []);
-
+    function estraiPercorsoDaUrl(url) {
+        // Crea un oggetto URL dal parametro stringa fornito
+        const urlAnalizzato = new URL(url);
+      
+        // Estrai il pathname dall'oggetto URL
+        const pathname = urlAnalizzato.pathname;
+      
+        // Usa una espressione regolare per trovare il percorso desiderato
+        // che inizia dopo il segmento 'album'
+        const risultato = pathname.match(/\/album(\/\d+\/tracks)/);
+      
+        // Controlla se il risultato esiste e ritorna il gruppo corrispondente
+        // Se non esiste, ritorna una stringa vuota o un messaggio di errore
+        return risultato ? risultato[1] : 'Percorso non trovato';
+      }
+      
 return (
-    <>
-<div style={{backgroundColor: "transparent", height: "18vh", width: "10vw"}}>
+    <Link to={estraiPercorsoDaUrl(props.album.album.tracklist)}>
+    <div className="d-flex flex-column albumPreview">
+<div>
 <img src={props.album.album.cover} alt="cover"></img>
+<p
+onClick={()=>{
+    console.log(currentState)
+}}
+>{props.album.album.title}</p>
 </div>
-<p>{props.album.album.title}</p>
-    </>
+    </div>
+</Link>
 )
 }
 

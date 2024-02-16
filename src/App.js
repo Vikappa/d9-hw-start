@@ -12,10 +12,7 @@ function App() {
     <BrowserRouter>
 <div className="d-flex h-100">
 <SideBar />
-<Routes>
-<Route path="/" element={<MainScreen/>} />
-<Route path="/podcast" element={<MainScreen/>} />
-</Routes>
+<MainScreen/>
 </div>
 
 

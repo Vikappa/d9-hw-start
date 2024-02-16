@@ -3,6 +3,7 @@ import { fetchPodcastAlbum, fetchTrendingAlbum  } from "../redux/action"
 import { useDispatch } from "react-redux";
 import { useSelector } from 'react-redux';
 import AlbumPreview from "./AlbumPreview";
+import Player from "./Player";
 
 const MainScreen =  function () {
 const dispatch = useDispatch();
@@ -19,17 +20,17 @@ const currentState = useSelector((state) => state);
     }, [currentState]);
 
     return (
-<>
-
+        <>
 <div className="d-flex flex-column">
 
-<div className="d-flex pseudoNavbar"></div>
+
+<div className="d-flex pseudoNavbar">
 <p>TRENDING</p>
 <p>PODCAST</p>
 <p>MOODS AND GENRES</p>
 <p>NEW RELEASES</p>
 <p>DISCOVER</p>
-        </div>
+</div>
 
 <div className="vetrinaAlbum d-flex flex-row flex-wrap justify-content-evenly">
 {
@@ -41,11 +42,12 @@ const currentState = useSelector((state) => state);
         }
     )
 }
+<Player />
 </div>
 
 
+</div>
 </>
-
     )
 
 }
